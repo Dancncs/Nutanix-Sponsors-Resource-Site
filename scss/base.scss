@@ -1,0 +1,38 @@
+body {
+	font            : $mainFont;
+} //body
+
+#{headings()} {
+	font            : $headFont;
+	color           : #333;
+	margin          : 0 0 20px;
+} //headings
+
+p {
+	margin          : 0 0 20px;
+} //p
+
+img {
+	display         : block;
+	max-width       : 100%;
+} // img
+
+ul {
+	list-style      : none;
+	margin          : 0;
+	padding         : 0;
+} // ul
+
+.wrap {
+	@include container();
+
+	@include susy-breakpoint($tablet, 6) {
+		@include show-grid();
+	} // bp($tablet)
+
+	@include susy-breakpoint($desktop, 12) {
+		@include show-grid();
+		border-left: 1px solid $grey;
+		border-right: 1px solid $grey;
+	} // bp($desktop)
+} // .wrap

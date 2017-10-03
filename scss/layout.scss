@@ -1,0 +1,136 @@
+section {
+	padding: 48px 0;
+
+	.inner_wrap {} // .inner_wrap
+
+	&.announcement {
+		@include background(linear-gradient($blue, darken($blue, 20)));
+		padding: 10px 0;
+		text-align: center;
+
+		.h1 {
+			color: $light;
+			font-size: 1em;
+			margin-bottom: 0;
+		} // .h1
+
+		@include susy-breakpoint($desktop) {
+			.h1 {
+				font-size: 1.25em;
+			} // .h1
+		} // bp($desktop)
+	} // .announcement
+
+	&.gold {
+		background: $grey;
+	} // .gold
+
+	.sponsor_stage {
+		position: relative;
+
+		&:before {
+			@include transform(translateY(-50%));
+			background-color: $black;
+			content: '';
+			height: 1px;
+			width: 0;
+			position: absolute;
+			top: 50%;
+			left: 0;
+		} // :before
+
+		h2 {
+			font-size: 1.65em;
+			text-align: center;
+		} // h2
+
+		@include susy-breakpoint($tablet) {
+			padding-left: 100px;
+
+			&:before {
+				width: 8%;
+			} // :before
+
+			h2 {
+				font-size: 2em;
+				text-align: left;
+			} // h2
+
+		} // bp($tablet)
+
+		@include susy-breakpoint($desktop) {
+			&:before {
+				right: 95%;
+			} // :before
+
+			h2 {
+				font-size: 3em;
+			} // h2
+
+		} // bp($desktop)
+	} // .sponsor_stage
+
+	.logo_list {
+		@include pie-clearfix;
+
+		li {
+			margin-bottom: 20px;
+		} // li
+
+		img {
+			margin-left: auto;
+			margin-right: auto;
+			width: span(3 of 4);
+		} // img
+
+		@include susy-breakpoint($tablet, 6) {
+			@include span(5 last);
+			li {
+				@include gallery(2);
+			} // li
+		} // bp($tablet)
+
+		@include susy-breakpoint($desktop, 12) {
+			@include span(10 last);
+			li {
+				@include gallery(4);
+			} // li
+		} // bp($desktop)
+	} // .logo_list
+} // section
+
+footer {
+	@include background(linear-gradient($blue, darken($blue, 20)));
+	color: $light;
+	font-size: 11px;
+	line-height: 1.5;
+	padding: 15px;
+	text-align: center;
+
+	a {
+		color: $light;
+		text-decoration: none;
+	} // a
+
+	p {
+		margin-bottom: 0;
+	} // p
+
+	.social_media {
+		margin-bottom: 10px;
+
+		ul {
+			@include pie-clearfix;
+
+			li {
+				display: inline;
+				font-size: 1.5em;
+				text-align: center;
+
+				a {
+					padding: 10px;
+				} // a
+			} // li
+		} // ul
+	} // .social_media
+} // footer
